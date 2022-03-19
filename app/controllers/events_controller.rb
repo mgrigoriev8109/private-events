@@ -10,7 +10,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(article_params)
+    @event = Event.new(event_params)
+    @event.creator_id = current_user.id
 
     if @event.save
       redirect to @event
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:name, :location, :date)
+      params.require(:event).permit(:username, :location, :date)
+
     end
 end
