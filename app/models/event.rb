@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :user, class_name: "Creator"
+  belongs_to :creator, class_name: "User"
   validates :name, :location, :date, presence:true
 end
