@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<%= @user.username %>
+<h1>All user events for current user</h1>
+<% Event.all.each do |event| %>
+  <% if event.creator_id == current_user.id %>
+    <%= event.name %>
+  <% end %>
+<% end %>
