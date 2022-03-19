@@ -1,8 +1,10 @@
+require 'debug'
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
   def index
     @events = Event.all
+    @user = current_user
   end
 
   def new
@@ -10,9 +12,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.creator_id = current_user.id
-    
+    @user = current_user
+    @event = @user.build_event(event_params)
+
     if @event.save
       redirect_to events_path
     else
