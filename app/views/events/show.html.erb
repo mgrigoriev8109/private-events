@@ -6,3 +6,13 @@
       <%= @event.date %>
     </li>
 </ul>
+
+<h1>Event Details</h1>
+<%= form_with model: @event_attending do |form| %>
+  <%= form.label :attended_event_id_, "Attend Event:" %>
+  <%= form.hidden_field :event_attendee_id, value:current_user.id %>
+  <%= form.hidden_field :attended_event_id, value:@event.id %>
+
+  <%= form.submit "Submit" %>
+
+<% end %>
