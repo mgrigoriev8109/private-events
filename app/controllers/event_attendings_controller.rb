@@ -14,8 +14,7 @@ class EventAttendingsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @event_attending = @user.attended_events.build(event_attending_params)
+    @event_attending = EventAttending.new(event_attending_params)
 
     if @event_attending.save
       redirect_to events_path
@@ -26,7 +25,6 @@ class EventAttendingsController < ApplicationController
 
   private
     def event_attending_params
-      params.require(:event_attending).permit(:attended_event_id, :event_attendee_id)
-
+      params.require(:event_attendings).permit(:event_attendee_id, :attended_event_id)
     end
 end
