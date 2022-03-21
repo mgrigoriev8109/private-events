@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  resources :event_attendings
   resources :events
   resources :users, only: [:show]
 
