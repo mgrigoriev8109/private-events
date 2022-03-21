@@ -1,8 +1,8 @@
 class CreateEventAttendings < ActiveRecord::Migration[7.0]
   def change
     create_table :event_attendings do |t|
-      t.integer :created_event_id
-      t.integer :attended_event_id
+      t.belongs_to :attended_event
+      t.belongs_to :event_attendee
 
       t.timestamps
     end
