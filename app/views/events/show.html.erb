@@ -1,13 +1,22 @@
 <h1>Event Details</h1>
 <ul>
     <li>
+      <p>Name:</p>
       <%= @event.name %>
+      <p>Location:</p>
       <%= @event.location %>
+      <p>Date:</p>
       <%= @event.date %>
+      <p>Attending Users:</p>
+      <% EventAttending.all.each do |event_attending| %>
+        <% if event_attending.attended_event_id == @event.id %>
+          <%= User.find(event_attending.event_attendee_id).username %>
+        <% end %>
+      <% end %>
     </li>
 </ul>
 
-<h1>Event Details</h1>
+<h1>Attend Event</h1>
 <%= form_with model: @event_attending, url: "/event_attendings", html: {'data-turbo' => "false" } do |form| %>
 
   <%= form.hidden_field :event_attendee_id, value:current_user.id %>
