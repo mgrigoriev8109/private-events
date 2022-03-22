@@ -1,21 +1,49 @@
-<h1>Created events</h1>
+
+<h1>Created Eventsasdf</h1>
 <ul>
-<% Event.all.each do |event| %>
-  <% if event.creator_id == current_user.id %>
+<% Event.all.each do |created_event| %>
+  <% if created_event.creator_id == current_user.id %>
   <li>
-    <%= event.name %>
+    <%= created_event.name %>
   </li>
   <% end %>
 <% end %>
 </ul>
 
-<h1>Attended events</h1>
-<ul>
+<% all_events = [] %>
+<% past_events = [] %>
+<% future_events = [] %>
+<% current_time = Time.new %>
+
 <% EventAttending.all.each do |event_attending| %>
   <% if event_attending.event_attendee_id == current_user.id %>
-  <li>
-    <%= Event.find(event_attending.attended_event_id).name %>
-  </li>
+    <% all_events.push(Event.find(event_attending.attended_event_id)) %>
   <% end %>
+<% end %>
+
+<% all_events.each do |event| %>
+  <% if event.date < current_time %>
+    <% past_events.push(event.name) %>
+  <% elsif event.date > current_time  %>
+    <% future_events.push(event.name) %>
+  <% end %>
+<% end %>
+
+<h1>Attended Events</h1>
+<ul>
+<% past_events.each do |event_name|%>
+  <li>
+    <%= event_name %>
+  </li>
+<% end %>
+</ul>
+
+
+<h1>Future Events</h1>
+<ul>
+<% future_events.each do |event_name|%>
+  <li>
+    <%= event_name %>
+  </li>
 <% end %>
 </ul>
