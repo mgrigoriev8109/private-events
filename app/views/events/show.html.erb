@@ -1,3 +1,4 @@
+require 'debug'
 <h1>Event Details</h1>
 <ul>
     <li>
@@ -17,8 +18,7 @@
 </ul>
 
 <h1>Attend Event</h1>
-<%= form_with model: @event_attending, url: "/event_attendings", html: {'data-turbo' => "false" } do |form| %>
-
+<%= form_with model: @event_attending, url: "/event_attendings" do |form| %>
   <%= form.hidden_field :event_attendee_id, value:current_user.id %>
   <%= form.hidden_field :attended_event_id, value:@event.id %>
 
