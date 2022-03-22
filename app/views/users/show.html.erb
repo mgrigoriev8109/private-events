@@ -1,6 +1,21 @@
-<h1>All user events for current user</h1>
+<h1>Created events</h1>
+<ul>
 <% Event.all.each do |event| %>
   <% if event.creator_id == current_user.id %>
+  <li>
     <%= event.name %>
+  </li>
   <% end %>
 <% end %>
+</ul>
+
+<h1>Attended events</h1>
+<ul>
+<% EventAttending.all.each do |event_attending| %>
+  <% if event_attending.event_attendee_id == current_user.id %>
+  <li>
+    <%= Event.find(event_attending.attended_event_id).name %>
+  </li>
+  <% end %>
+<% end %>
+</ul>
