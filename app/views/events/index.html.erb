@@ -1,8 +1,18 @@
-<h1>All events</h1>
+<h1>Past Events</h1>
 <ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to(event.name, event) %>
-    </li>
-  <% end %>
+<% current_time = Time.new %>
+<% Event.past(current_time).each do |event| %>
+  <li>
+    <%= link_to(event.name, event) %>
+  </li>
+<% end %>
+</ul>
+
+<h1>Future Events</h1>
+<ul>
+<% Event.future(current_time).each do |event| %>
+  <li>
+    <%= link_to(event.name, event) %>
+  </li>
+<% end %>
 </ul>
