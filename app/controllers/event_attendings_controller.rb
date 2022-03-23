@@ -1,4 +1,3 @@
-require 'debug'
 class EventAttendingsController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
