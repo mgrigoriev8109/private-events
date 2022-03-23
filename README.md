@@ -1,6 +1,6 @@
 # Private Events
 
-[Members Only](https://peaceful-river-81983.herokuapp.com/) is a full-stack Rails app built from scratch, providing Users with the ability to create events, attend events, and view attendance. Events are also seperated into those which have already occured, and future events yet to come. 
+[Private Events](https://peaceful-river-81983.herokuapp.com/) is a full-stack Rails app built from scratch, providing Users with the ability to create events, attend events, and view attendance. Events are also seperated into those which have already occured, and future events yet to come. 
 
 ## Demo
 
