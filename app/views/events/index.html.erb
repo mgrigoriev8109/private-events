@@ -1,18 +1,20 @@
-<h1>Past Events</h1>
-<ul>
-<% current_time = Time.new %>
-<% Event.past(current_time).each do |event| %>
-  <li>
-    <%= link_to(event.name, event) %>
-  </li>
-<% end %>
-</ul>
+<div class="columns">
+  <ul class="column">
+    <h1>Past Events</h1>
+    <% current_time = Time.new %>
+    <% Event.past(current_time).each do |event| %>
+    <li>
+      <%= link_to(event.name, event) %>
+    </li>
+    <% end %>
+  </ul>
 
-<h1>Future Events</h1>
-<ul>
-<% Event.future(current_time).each do |event| %>
-  <li>
-    <%= link_to(event.name, event) %>
-  </li>
-<% end %>
-</ul>
+  <ul class="column">
+    <h1>Future Events</h1>
+    <% Event.future(current_time).each do |event| %>
+    <li>
+      <%= link_to(event.name, event) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
