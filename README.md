@@ -1,6 +1,6 @@
 # Private Events
 
-[Private Events](https://peaceful-river-81983.herokuapp.com/) is a full-stack Rails app built from scratch, providing Users with the ability to create events, attend events, and view attendance. Events are also seperated into those which have already occured, and future events yet to come. 
+Private Events is a full-stack Rails app built from scratch, providing Users with the ability to create events, attend events, and view attendance. Events are also seperated into those which have already occured, and future events yet to come. 
 
 ## Demo
 
@@ -8,7 +8,7 @@
 
 ## How to Access
 
-[This link will take you to the live website](https://peaceful-river-81983.herokuapp.com/) deployed on heroku. Create new events and view attendance by singing in with the username: `user1` and the password: `password1`.
+Currently being deployed on heroku. Create new events and view attendance by singing in with the username: `user1` and the password: `password1`.
 
 ## Features
 
