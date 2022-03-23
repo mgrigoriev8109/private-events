@@ -7,25 +7,33 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%=  %>
+    <%= javascript_importmap_tags %>
   </head>
 
-  <header class="columns">
-    
-    <%= link_to "New Event", new_event_path, class: "column" %>
-    <%= link_to "All Events", events_path, class: "column" %>
-    <%= link_to "Sign In", new_user_session_path, class: "column" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "column" %>
-    <%= link_to "Sign Out", destroy_user_session_path, class: "column" %>
-    <%= link_to "User Profile", current_user, class: "column" %>
-  </header>
-
   <body>
-    <%= yield %>
-  </body>
+    <div class="content-container">
+      <header id="header">
+        <%= link_to "All Events", events_path %>
+        <%= link_to "New Event", new_event_path %>
+        <%= link_to "User Profile", current_user %>
+      </header>
 
-  <footer>
-    <p class="notice column"><%= notice %></p>
-    <p class="alert column"><%= alert %></p>
-  </footer>
+      <main id="main">
+        <%= yield %>
+      </main>
+
+      <footer id="footer">
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign Out", destroy_user_session_path %>
+        
+        <% if notice %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </footer>
+    </div>
+  </body>
 </html>

@@ -1,27 +1,21 @@
-require 'debug'
+<div id="event">
 <h1>Event Details</h1>
+<p>Name: <%= @event.name %></p>
+<p>Location: <%= @event.location %></p>
+<p>Date: <%= @event.date %></p>
+<p>Attending Users: </p>
 <ul>
-    <li>
-      <p>Name:</p>
-      <%= @event.name %>
-      <p>Location:</p>
-      <%= @event.location %>
-      <p>Date:</p>
-      <%= @event.date %>
-      <p>Attending Users:</p>
-      <% EventAttending.all.each do |event_attending| %>
-        <% if event_attending.attended_event_id == @event.id %>
-          <%= User.find(event_attending.event_attendee_id).username %>
-        <% end %>
-      <% end %>
-    </li>
+<% EventAttending.all.each do |event_attending| %>
+  <% if event_attending.attended_event_id == @event.id %>
+    <li><%= User.find(event_attending.event_attendee_id).username %></li>
+  <% end %>
+<% end %>
 </ul>
 
-<h1>Attend Event</h1>
 <%= form_with model: @event_attending, url: "/event_attendings" do |form| %>
   <%= form.hidden_field :event_attendee_id, value:current_user.id %>
   <%= form.hidden_field :attended_event_id, value:@event.id %>
 
-  <%= form.submit "Submit", :class => 'button is-link' %>
-
+  <%= form.submit "Attend Event", :class => 'button is-link' %>
 <% end %>
+</div>

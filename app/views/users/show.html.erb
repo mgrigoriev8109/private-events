@@ -1,13 +1,13 @@
 
 <h1>Created Events</h1>
-<ul>
-<% Event.all.each do |created_event| %>
+<ul id="grid-container">
+  <% Event.all.each do |created_event| %>
   <% if created_event.creator_id == current_user.id %>
   <li>
     <%= created_event.name %>
   </li>
   <% end %>
-<% end %>
+  <% end %>
 </ul>
 
 <% all_events = [] %>
@@ -30,7 +30,7 @@
 <% end %>
 
 <h1>Attended Events</h1>
-<ul>
+<ul id="grid-container">
 <% past_events.each do |event_name|%>
   <li>
     <%= event_name %>
@@ -40,7 +40,7 @@
 
 
 <h1>Future Events</h1>
-<ul>
+<ul id="grid-container">
 <% future_events.each do |event_name|%>
   <li>
     <%= event_name %>

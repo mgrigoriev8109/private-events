@@ -1,13 +1,21 @@
 <%= form_with model: @event do |form| %>
-  <%= form.label :name, "Name:" %>
-  <%= form.text_field :name %>
+  <div class="field">
+    <%= form.label :name, "Event Name:" %>
+    <%= form.text_field :name %>  
+  </div>
 
-  <%= form.label :location, "Location:" %>
-  <%= form.text_field :location %>
+  <div class="field">
+    <%= form.label :location, "Event Location:" %>
+    <%= form.text_field :location %>
+  </div>
 
-  <%= form.label :date, "Start Time:" %>
-  <%= form.datetime_local_field :date %>
+  <div class="field">
+    <%= form.label :date, "Start Time:" %>
+    <%= form.datetime_local_field :date %>
+  </div>
 
-  <%= form.submit "Submit", :class => 'button is-link' %>
+  <div class="actions">
+    <%= form.submit "Create Event" %>
+  </div>
 
 <% end %>
