@@ -4,7 +4,7 @@
 
 ## Demo
 
-<img src='private-demo.png' alt='events_demo'>
+<img src='event-demo.png' alt='events_demo'>
 
 ## Live
 
