@@ -1,6 +1,6 @@
 # Private Events
 
-Private Events is a Rails website, which is similar to Eventbrite and allows users to create events, attend events, and view past/future events. 
+[Private Events](https://mg-events.herokuapp.com/) is a Rails website, which is similar to Eventbrite and allows users to create events, attend events, and view past/future events. 
 
 ## Demo
 
@@ -8,7 +8,7 @@ Private Events is a Rails website, which is similar to Eventbrite and allows use
 
 ## Live
 
-Play around with the [live version deployed on Heroku](https://agile-fortress-68521.herokuapp.com/events) . Create new events, attend events, and view attendance by singing in with the username: `test@gmail.com` and the password: `testtest`, or feel free to create your own User!
+Play around with the [live version deployed on Heroku](https://mg-events.herokuapp.com/) . Create new events, attend events, and view attendance by singing in with the username: `test@gmail.com` and the password: `testtest`, or feel free to create your own User!
 
 ## Features
 
