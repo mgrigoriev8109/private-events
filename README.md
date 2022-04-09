@@ -4,7 +4,7 @@ Private Events is a Rails website, which is similar to Eventbrite and allows use
 
 ## Demo
 
-<img src='eve-demo.png' alt='events_demo'>
+<img src='private-demo.png' alt='events_demo'>
 
 ## Live
 
